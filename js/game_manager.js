@@ -153,7 +153,15 @@ GameManager.prototype.select = function (target) {
 	// toggle selected
 	this.actuator.toggleSelected(target.parentNode);
 	
-	var value = target.innerText;
+	var value = null;
+	
+	if (document.all) {
+	  value = target.innerText;
+	}else{
+	  value = target.textContent;
+	}
+	
+	
 	var index = this.selectedValues.indexOf(value);
 	
 	if ( index == -1) {
