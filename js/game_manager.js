@@ -161,11 +161,13 @@ GameManager.prototype.select = function (target) {
 	  value = target.textContent;
 	}
 	
+	// convert to int
+	value = parseInt(value);
 	
 	var index = this.selectedValues.indexOf(value);
 	
 	if ( index == -1) {
-		this.selectedValues[this.selectedValues.length] = parseInt(value);
+		this.selectedValues[this.selectedValues.length] = value;
 			
 		if (this.selectedValues.length == this.level) {
 		
